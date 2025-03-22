@@ -1,0 +1,31 @@
+<!-- <h1>{{titulo}}</h1>
+
+<ul *ngFor="let item of clientes">
+    <li>
+        <p>{{item.nome}}</p>
+        <p>{{item.cpf}}</p>
+    </li>
+</ul> -->
+<!-- <a [routerLink]="['cadastrar']" class="cadastrar-cliente">cadastrar cliente</a> -->
+<button type="button" (click)="handleCadastrarCliente()">cadastrar cliente</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>nome</th>
+      <th>cpf</th>
+      <th>telefone</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of clientes">
+      <td>{{ item.nome }}</td>
+      <td>{{ item.cpf }}</td>
+      <td>{{ item.telefone }}</td>
+      <td>
+        <button type="button" (click)="openEdit(item)">editar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

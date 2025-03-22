@@ -1,0 +1,26 @@
+<form [formGroup]="formulario" (ngSubmit)="salvar()" *ngIf="formulario">
+    <label>nome:</label>
+    <input type="text" formControlName="nome">
+    <label>cpf:</label>
+    <input type="text" formControlName="cpf">
+    <label>telefone:</label>
+    <input type="text" formControlName="telefone">
+
+    <hr>
+
+    <div formArrayName="conta">
+        <div *ngFor="let conta of contas.controls; let i = index" [formGroupName]="i">
+          <label>Tipo da conta:</label>
+          <input type="text" formControlName="tipoConta">
+          <label>Agência:</label>
+          <input type="text" formControlName="agencia">
+          <label>Saldo:</label>
+          <input type="text" formControlName="saldo">
+          <button type="button" (click)="removerConta(i)">Remover Conta</button>
+          <hr>
+        </div>
+    </div>
+
+    <button type="button" (click)="adicionarConta()">Adicionar Conta</button>  
+    <button type="submit">Salvar</button>
+</form>
