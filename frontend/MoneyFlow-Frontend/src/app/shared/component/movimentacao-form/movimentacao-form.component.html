@@ -1,0 +1,18 @@
+<div class="container">
+    <form class="row g-3 align-items-center" [formGroup]="formMov">
+        <div class="col-md-4">
+            <label class="form-label">Conta de Origem:</label>
+            <select formControlName="origem" class="form-control">
+                <option *ngFor="let conta of contas" [value]="conta.numeroConta">{{ conta.numeroConta }}</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label class="form-label">Conta de Destino:</label>
+            <input type="text" formControlName="destino" class="form-control">
+        </div>
+        <div class="col-md-4">
+            <label class="form-label">Valor:</label>
+            <input type="text" formControlName="valor" class="form-control">
+        </div>
+    </form>
+</div>

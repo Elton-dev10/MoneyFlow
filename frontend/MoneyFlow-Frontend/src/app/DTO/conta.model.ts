@@ -1,5 +1,5 @@
 export interface ContaDTO {
-    numeroConta: number;
+    numeroConta?: number;
     agencia: number;
     tipoConta: number;
     saldo: number;

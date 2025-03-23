@@ -8,6 +8,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ClienteEditComponent } from './cliente-edit/cliente-edit.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ClienteFormComponent } from './cliente-form/cliente-form.component';
+import { MatCommonModule } from '@angular/material/core';
+import { NgbModal, NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [ClienteComponent, ClienteEditComponent, ClienteFormComponent],
@@ -16,7 +19,10 @@ import { ClienteFormComponent } from './cliente-form/cliente-form.component';
     ClienteRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatDialogModule
+    MatCommonModule,
+    NgbModule,
+    NgbModalModule,
+    SharedModule
   ]
 })
 export class ClienteModule { }

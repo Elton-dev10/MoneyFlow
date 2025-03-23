@@ -9,13 +9,13 @@
 <!-- <a [routerLink]="['cadastrar']" class="cadastrar-cliente">cadastrar cliente</a> -->
 <button type="button" (click)="handleCadastrarCliente()">cadastrar cliente</button>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>nome</th>
-      <th>cpf</th>
-      <th>telefone</th>
-      <th></th>
+      <th scope="col">nome</th>
+      <th scope="col">cpf</th>
+      <th scope="col">telefone</th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -23,9 +23,13 @@
       <td>{{ item.nome }}</td>
       <td>{{ item.cpf }}</td>
       <td>{{ item.telefone }}</td>
-      <td>
+      <td class="">
         <button type="button" (click)="openEdit(item)">editar</button>
+        <button type="button">movimentações</button>
+        <button type="button" (click)="openModalCadastrar(item)">cadastrar movimentação</button>
       </td>
     </tr>
   </tbody>
 </table>
+
+
