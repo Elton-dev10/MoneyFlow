@@ -48,6 +48,12 @@ export class ClienteComponent implements OnInit{
     const modalRef:NgbModalRef = this.modalService.open(MovimentacaoFormComponent,
        { size: 'lg', centered: true, windowClass: 'custom-modal-height' });
     modalRef.componentInstance.cliente = cliente.id;
+    modalRef.result.then(
+      (result) => {
+        console.log(result);
+        
+      }
+    );
   }  
 
   openEdit(cliente: ClienteDTO) {

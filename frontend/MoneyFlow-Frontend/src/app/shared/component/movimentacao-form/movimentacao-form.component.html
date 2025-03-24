@@ -1,5 +1,5 @@
 <div class="container">
-    <form class="row g-3 align-items-center" [formGroup]="formMov">
+    <form class="row g-3 align-items-center" [formGroup]="formMov" (ngSubmit)="save()">
         <div class="col-md-4">
             <label class="form-label">Conta de Origem:</label>
             <select formControlName="origem" class="form-control">
@@ -14,5 +14,6 @@
             <label class="form-label">Valor:</label>
             <input type="text" formControlName="valor" class="form-control">
         </div>
+        <button type="submit" class="btn-primary">Realizar transação</button>
     </form>
 </div>
