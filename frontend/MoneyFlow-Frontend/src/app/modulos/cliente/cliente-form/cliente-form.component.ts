@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { ClienteDTO } from '../../../DTO/cliente.model';
 import { ClienteService } from '../../../service/cliente.service';
 import { ContaDTO } from '../../../DTO/conta.model';
@@ -45,15 +45,19 @@ export class ClienteFormComponent implements OnInit{
     this.contas.removeAt(index);
   }
 
+  // private isRequired(): ValidatorFn {
+  //   return {
+
+  //   }
+  // }
+
   salvar(){
       if (!this.formulario?.valid) {
         return;
       }
-      const cliente: ClienteDTO = {
-        nome: this.formulario?.get('nome')?.value,
-        cpf: this.formulario?.get('cpf')?.value,
-        telefone: this.formulario?.get('telefone')?.value,
-      };
+      const cliente: ClienteDTO = { ...this.formulario.value };
+
+      // this.formulario.pa
 
       const clienteRequest: ClienteContaRequest ={
         cliente: cliente,

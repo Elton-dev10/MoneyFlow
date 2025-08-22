@@ -4,13 +4,15 @@ import { ContaFormComponent } from './component/conta-form/conta-form.component'
 import { MovimentacaoFormComponent } from './component/movimentacao-form/movimentacao-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { InputAgendamentoMovimentacaoComponent } from './component/input-agendamento-movimentacao/input-agendamento-movimentacao.component';
 
 
 
 @NgModule({
   declarations: [
     ContaFormComponent,
-    MovimentacaoFormComponent
+    MovimentacaoFormComponent,
+    InputAgendamentoMovimentacaoComponent
   ],
   imports: [
     CommonModule,
